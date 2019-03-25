@@ -1,0 +1,11 @@
+example\core\CheсkPage.class
+example\core\TravelInsurance.class
+example\core\Init.class
+example\core\Config.class
+example\core\steps\RgsStep.class
+example\core\config\ConfigProperties.class
+example\core\OnlineCalculate.class
+example\core\steps\RgsBeforeAfter.class
+example\core\RgsMenu.class
+example\core\BasePageRgs.class
+example\core\MainPage.class
