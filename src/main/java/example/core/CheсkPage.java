@@ -36,6 +36,7 @@ public class CheсkPage extends BasePageRgs {
         compareText(comparableElementBirthDay, birthday);
 
     }
+
 //    @Override
 //    public BasePageRgs getNext() {
 //        return null;

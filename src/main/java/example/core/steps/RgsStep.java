@@ -72,10 +72,9 @@ public class RgsStep {
     }
 
     @Дано("^ФИО (.*), дата рождения (.*),последний параметр (.*)")
-    public void givenFewArguments(String name, String dateOfBirth, String trueOrNot) throws Exception {
+    public void givenFewArguments(String name, String dateOfBirth,String yesOfNot) throws Exception {
         TravelInsurance.pageObject.setFullName(name);
         TravelInsurance.pageObject.setBirthDay(dateOfBirth);
-          CheсkPage.cheсkPage.checkElementsWithParameter(name, dateOfBirth);
     }
 
     @Когда("нажимаем кнопку рассчитать")
@@ -83,13 +82,12 @@ public class RgsStep {
         TravelInsurance.pageObject.next();
     }
 
-    @Когда("проверить данные")
-    public void checkInformation()throws Exception{
+    @Когда("^проверить данные ФИО (.*), дата рождения (.*),последний параметр (.*)")
+    public void checkInformation(String name, String dateOfBirth, String yesOfNot)throws Exception{
         CheсkPage.cheсkPage = new CheсkPage();
-        CheсkPage.cheсkPage.checkElements();
 
+        CheсkPage.cheсkPage.checkElementsWithParameter(name, dateOfBirth);
 
     }
-
 
 }
