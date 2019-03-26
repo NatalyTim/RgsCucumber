@@ -19,28 +19,35 @@ public class CheсkPage extends BasePageRgs {
             "/div[contains(@data-bind, 'Активный')]/div[@class='summary-row']/span[@class='summary-value']/span")
     public WebElement comparableElementActiveOrNot;
 
-    public void checkElements() throws Exception {
-        System.out.println("16.Проверить значения");
-        System.out.println("Многократные поездки в течение года");
+    public void checkElementQuantity() throws Exception {
+        System.out.println("16.Проверить значения:");
+        System.out.println("16.1 Многократные поездки в течение года");
         compareText(comparableElementTrips, "Многократные поездки в течение года");
-        System.out.println("16.1 Территория – Шенген");
+    }
+
+    public void checkElementArea() throws Exception {
+         System.out.println("16.2 Территория – Шенген");
         compareText(comparableElementDirection, "Шенген");
-        System.out.println("16.2 Вид отдыха - активный");
-        compareText(comparableElementActiveOrNot, "Активный");
+
 
     }
-    public void checkElementsWithParameter(String name,String birthday) throws Exception{
+
+    public void checkName(String name) throws Exception{
         System.out.println("16.3 Застрахованный");
         compareText(comparableElementFullName, name);
-        System.out.println("16.4 Дата рождения");
-        compareText(comparableElementBirthDay, birthday);
-
     }
 
-//    @Override
-//    public BasePageRgs getNext() {
-//        return null;
-//    }
+    public void checkBirthDay(String birthDay) throws Exception{
+        System.out.println("16.4 Дата рождения");
+        compareText(comparableElementBirthDay, birthDay);
+    }
+
+    public void checkActivOrNot(String active) throws Exception{
+        System.out.println("16.5 Вид отдыха - активный");
+        if("true".equalsIgnoreCase(active))
+            compareText(comparableElementActiveOrNot, "Активный");
+    }
+
 @Override
 public void next() { };
 

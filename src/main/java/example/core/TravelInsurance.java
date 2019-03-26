@@ -53,7 +53,7 @@ public class TravelInsurance extends BasePageRgs {
     }
 
     public void setCheckBox() throws Exception {
-        System.out.println("5.5 Я согласен на обработку данных  - выбрать чекбокс");
+        System.out.println("14. Я согласен на обработку данных  - выбрать чекбокс");
         scrollToAndClickElement(checkBox);
     }
 
@@ -136,12 +136,6 @@ public class TravelInsurance extends BasePageRgs {
         return new TravelInsurance();
     }
 
-//    @Override
-//    public BasePageRgs getNext() throws Exception{
-//        System.out.println("15. Нажать рассчитать");
-//        scrollToAndClickElement(buttonCalculate);
-//        return new CheсkPage();
-//    }
 @Override
 public void next() throws Exception{
     System.out.println("15. Нажать рассчитать");

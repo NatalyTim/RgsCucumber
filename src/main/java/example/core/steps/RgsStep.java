@@ -27,8 +27,8 @@ public class RgsStep {
 
     @Тогда("проверяем наличие заголовка")
     public void setComparableElement() throws Exception {
-       TravelInsurance.pageObject = new TravelInsurance();
-       TravelInsurance.pageObject.setComparableElement();
+        TravelInsurance.pageObject = new TravelInsurance();
+        TravelInsurance.pageObject.setComparableElement();
     }
 
     @Когда("выбираем количесво поездок")
@@ -72,7 +72,7 @@ public class RgsStep {
     }
 
     @Дано("^ФИО (.*), дата рождения (.*),последний параметр (.*)")
-    public void givenFewArguments(String name, String dateOfBirth,String yesOfNot) throws Exception {
+    public void givenFewArguments(String name, String dateOfBirth, String yesOfNot) throws Exception {
         TravelInsurance.pageObject.setFullName(name);
         TravelInsurance.pageObject.setBirthDay(dateOfBirth);
     }
@@ -82,12 +82,31 @@ public class RgsStep {
         TravelInsurance.pageObject.next();
     }
 
-    @Когда("^проверить данные ФИО (.*), дата рождения (.*),последний параметр (.*)")
-    public void checkInformation(String name, String dateOfBirth, String yesOfNot)throws Exception{
+    @Когда("^проверить данные ФИО (.*)")
+    public void checkInformationName(String name) throws Exception {
+        CheсkPage.cheсkPage.checkName(name);
+    }
+
+    @Когда("^проверить данные дата рождения (.*)")
+    public void checkInformationDateOfBirth(String dateOfBirth) throws Exception {
+        CheсkPage.cheсkPage.checkBirthDay(dateOfBirth);
+    }
+
+    @Когда("^проверить данные активный отдых (.*)")
+    public void checkInformationActive(String yesOfNot) throws Exception {
+        System.out.println("проверить данные последний параметр ");
+        CheсkPage.cheсkPage.checkActivOrNot(yesOfNot);
+    }
+
+    @Когда("проверить количество поездок в год")
+    public void checkInformationQuantity() throws Exception {
         CheсkPage.cheсkPage = new CheсkPage();
+        CheсkPage.cheсkPage.checkElementQuantity();
+    }
 
-        CheсkPage.cheсkPage.checkElementsWithParameter(name, dateOfBirth);
-
+    @Когда("проверить территорию Шенген")
+    public void checkInformationArea() throws Exception {
+        CheсkPage.cheсkPage.checkElementArea();
     }
 
 }
